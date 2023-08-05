@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quản lý điểm học sinh</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Quản lý điểm học sinh</h2>
+    
+    <div class="row">
+			<div class="col-md-5 p-3" style="background-color:#bcbaaf" id="studentForm">
+				<h6>FORM NHẬP THÔNG TIN HỌC SINH</h6>
+				<div class="row mt-3">
+					<div class="col-md-12" >
+						<input type="text" id="fullName" required name="" placeholder="Tên học sinh" style="width:526px">
+					</div>
+					<div class="col-md-12 pt-2">
+						<input type="number" id="mathScore" min="0" max="10" step="0.1" required name="" placeholder="Điểm toán" style="width:526px">
+					</div>
+					<div class="col-md-12 pt-2">
+						<input type="number" id="literatureScore" min="0" max="10" step="0.1" required name="" placeholder="Điểm văn" style="width:526px">
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-md-4" style="text-align: center;">
+						<button type="button"  class="btn btn-primary" onclick="addStudent()">Thêm</button>
+					</div>
+					<div class="col-md-4" style="text-align: center;">
+						 <button type="button" class="btn btn-success" onclick="updateStudent()">Sửa</button>
+					</div>
+					<div class="col-md-4" style="text-align: center;">
+						<button type="button" class="btn btn-danger" onclick="deleteStudent()">Xóa</button>
+					</div>
+				</div>
+				
+				
+
+			</div>
+			<div class="col-md-5 offset-1 p-3 text-end mx-3" style="background-color:#bcbaaf">
+				<h6 style="text-align: left;">THÔNG TIN HỌC SINH</h6>
+
+				<ul Style="padding-right:40px;list-style:none">
+					<li>Tên học sinh: <input type="text" id="name" required name="" placeholder="Tên học sinh" style="width:326px"> </li>
+					<li>Điểm toán: <input type="number" id="math" min="0" max="10" step="0.1" required name="" placeholder="Điểm toán" style="width:326px"></p> </li>
+					<li>Điểm Văn: <input type="number" id="literature" min="0" max="10" step="0.1" required name="" placeholder="Điểm toán" style="width:326px"> </li>
+					<li>Xếp loại: <input type="text" id="grade"  required name="" placeholder="Điểm toán" style="width:326px"> </li>
+					<li>GPA: <input type="number" id="averageScore" min="0" max="10" step="0.1" required name="" placeholder="Điểm toán" style="width:326px"></p> </li>
+				</ul>
+				
+			</div>
+		</div>
+
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Họ và tên</th>
+          <th>Điểm toán</th>
+          <th>Điểm văn</th>
+          <th>Điểm trung bình</th>
+          <th>Xếp loại</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody">
+        <!-- Students' data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  
+  <script src="./js/main.js"></script> <!-- Include your JavaScript file -->
+</body>
+</html>
